@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 20px;
+  background: #f3f2ef;
+}
+
+.feed {
+  width: 550px;
+}

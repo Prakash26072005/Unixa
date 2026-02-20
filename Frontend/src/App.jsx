@@ -1,13 +1,30 @@
-import './App.css'
+import Navbar from "./components/nav/Nav.jsx";
+import Home from "./pages/Home.jsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Chat from "./pages/Chat.jsx";
+import Profile from "./pages/Profile.jsx";
+import Refralls from "./pages/Referrals.jsx";
+import Alumni from "./pages/Alumni.jsx";
+import Jobs from "./pages/Jobs.jsx";
+import Notifications from "./pages/Notifications.jsx";
+import OpenSorcePro from "./pages/OpenSorcePro.jsx";
 
 function App() {
   return (
-    <>
-      <h1 className="text-4xl font-bold text-blue-600 text-center mt-10">
-        Prakash
-      </h1>
-    </>
+     <BrowserRouter>
+     <Navbar/>
+        <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/referrals" element={<Refralls />} />
+        <Route path="/alumni" element={<Alumni />} />
+        <Route path="/chat" element={<Chat />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/jobs" element={<Jobs/>} />
+        <Route path="/op-src-pro" element={<OpenSorcePro/>} />
+        <Route path="/notifications" element={<Notifications />} />
+      </Routes>
+     </BrowserRouter>
   )
 }
 
-export default App
+export default App;

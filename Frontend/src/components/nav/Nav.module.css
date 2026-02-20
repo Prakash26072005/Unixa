@@ -1,0 +1,177 @@
+.navbar {
+  width: 100%;
+  height: 65px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 45px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+
+  position: sticky;   /* Only this */
+  top: 0;
+  z-index: 1000;
+}
+
+/* Logo */
+.logo {
+  font-size: 25px;
+  font-weight: 600;
+  color: #2563eb;
+  display: flex;
+  align-items: center;
+}
+
+.logoU {
+  font-size: 39px;
+  font-weight: 700;
+}
+
+/* Desktop Menu */
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 17px;
+  font-weight: 540;
+  color: #035BFF;
+  cursor: pointer;
+  padding: 6px 14px;
+  background-color: #E3EEEF;
+  border-radius: 999px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.item:hover:not(.active) {
+  background: #f3f4f6;
+  transform: translateY(-1px);
+}
+.iconImg {
+ 
+  object-fit: contain;
+}
+
+/* Active */
+.active {
+  background: #035BFF;
+  color: white;
+}
+
+.active img {
+  filter: brightness(0) invert(1);
+}
+
+/* Right Section */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.right a {
+  padding: 6px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.right a:hover {
+  background-color: #f3f4f6;
+  transform: scale(1.05);
+}
+
+.logoImg {
+  object-fit: contain;
+}
+
+/* Mobile Menu Icon */
+.menuIcon {
+  display: none;
+  cursor: pointer;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 0 25px;
+  }
+
+  .item {
+    font-size: 15px;
+    padding: 6px 10px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 0 15px;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .menuIcon {
+    display: block;
+  }
+
+  .logoU {
+    font-size: 30px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .logoImg {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+/* Mobile Dropdown */
+.mobileMenu {
+  position: absolute;
+  top: 65px;
+  right: 15px;
+  left: 15px;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: fadeIn 0.2s ease;
+}
+
+.mobileItem {
+  padding: 8px 12px;
+  cursor: pointer;
+  color: #2563eb;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.mobileItem:hover {
+  background: #f3f4f6;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
