@@ -1,19 +1,17 @@
-/* Main Banner Container */
+
 .banner {
   display: flex;
   align-items: center;
   justify-content: space-between;
  background: #ffffff;
   border-radius: 16px;
-  padding: 30px 40px;
+  padding: 10px 20px;
   position: relative;
   overflow: hidden;
  height: 250px;
-  margin-top: 20px;
-  /* margin-right: 35px; */
+  margin-top: 1px;
 }
 
-/* Left Content */
 .content {
   flex: 1;
 }
@@ -31,7 +29,7 @@
   margin-bottom: 18px;
 }
 
-/* Button */
+
 .content button {
   background: #2563eb;
   color: white;
@@ -47,7 +45,7 @@
   background: #1e40af;
 }
 
-/* Right Image Section */
+
 .imageContainer {
   flex: 1;
   display: flex;
@@ -60,7 +58,7 @@
   object-fit: contain;
 }
 
-/* Dots */
+
 .dots {
   position: absolute;
   bottom: 12px;
@@ -83,4 +81,5 @@
   background: #1e40af;
   width: 8px;
   height: 8px;
-}
+} 
+

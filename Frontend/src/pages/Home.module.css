@@ -1,26 +1,32 @@
-.container {
+ .container {
   display: grid;
-  grid-template-columns: 280px 1fr ;
+  grid-template-columns: 260px 1fr 320px;
   gap: 24px;
   padding: 20px 40px;
   background: #f3f2ef;
-  min-height: 100vh;
 }
 
+/* Sidebar */
 .left {
-  position: sticky;
-  top: 80px; /* navbar height */
-  height: calc(100vh - 80px); /* important */
-}
-
-.center {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.right {
+  grid-row: span 2; 
   position: sticky;
   top: 80px;
-  height: fit-content;
+  height: calc(100vh - 80px); 
+}
+
+/* Banner spans center + right */
+.bannerRow {
+  grid-column: 2 / 4;  /* span column 2 and 3 */
+}
+
+/* Feed */
+.center {
+  grid-column: 2 / 3;
+}
+
+/* Right panel */
+.right {
+  grid-column: 3 / 4;
+  position: sticky;
+  top: 80px;
 }
