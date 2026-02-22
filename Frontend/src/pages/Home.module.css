@@ -1,11 +1,26 @@
 .container {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 280px 1fr ;
   gap: 24px;
-  padding: 20px;
+  padding: 20px 40px;
   background: #f3f2ef;
+  min-height: 100vh;
 }
 
-.feed {
-  width: 550px;
+.left {
+  position: sticky;
+  top: 80px; /* navbar height */
+  height: calc(100vh - 80px); /* important */
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.right {
+  position: sticky;
+  top: 80px;
+  height: fit-content;
 }
