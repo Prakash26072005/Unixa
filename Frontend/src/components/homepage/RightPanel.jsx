@@ -1,228 +1,77 @@
-// import styles from "./RightPanel.module.css";
-// import {
-//   trendingProject,
-//   suggestedUsers,
-// } from "../../data/suggestions";
-
-// const RightPanel = () => {
-//   return (
-//     <div className={styles.panel}>
-
-      
-//       <div className={styles.card}>
-//         <h3 className={styles.heading}>Trending Topics</h3>
-
-//         <div className={styles.section}>
-//           <p className={styles.sectionTitle}>• Open Source Projects</p>
-
-//           <div className={styles.projectBox}>
-//             <h4 className={styles.projectName}>
-//               {trendingProject.project.name}
-//             </h4>
-
-//             <div className={styles.tags}>
-//               {trendingProject.project.tags.map((tag, i) => (
-//                 <span key={i}>{tag}</span>
-//               ))}
-//             </div>
-
-//             <p className={styles.projectDesc}>
-//               {trendingProject.project.description}
-//             </p>
-
-//             <div className={styles.meta}>
-//               <p>👤 Owner: RahulSharma</p>
-//               <p>🎓 Mentor: Professor</p>
-//               <p>⭐ Rating: 4.5 (500+)</p>
-//             </div>
-
-//             <div className={styles.projectFooter}>
-//               <button className={styles.moreBtn}>More</button>
-//               <button className={styles.applyBtn}>Apply</button>
-//             </div>
-//           </div>
-//         </div>
-
-       
-//         <div className={styles.section}>
-//           <p className={styles.sectionTitle}>• Suggested Connections</p>
-
-//           {suggestedUsers.map((user) => (
-//             <div key={user.id} className={styles.userCard}>
-//               <img src={user.avatar} alt={user.name} />
-
-//               <div className={styles.userInfo}>
-//                 <h4>{user.name}</h4>
-//                 <p className={styles.role}>{user.role}</p>
-
-//                 {user.university && (
-//                   <p className={styles.university}>
-//                     {user.university}
-//                   </p>
-//                 )}
-
-//                 {user.mutual && (
-//                   <p className={styles.mutual}>
-//                     {user.mutual}+ mutual connections
-//                   </p>
-//                 )}
-
-//                 {user.bestMatch && (
-//                   <div className={styles.matchRow}>
-//                     <span className={styles.best}>⭐ Best Match</span>
-//                     <span className={styles.percent}>
-//                       {user.bestMatch}%
-//                     </span>
-//                   </div>
-//                 )}
-//               </div>
-
-//               <button className={styles.connectBtn}>
-//                 {user.bestMatch ? "Request Referral" : "Connect"}
-//               </button>
-//             </div>
-//           ))}
-//         </div>
-
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default RightPanel;
-
-// import styles from "./RightPanel.module.css";
-// import {
-//   trendingProject,
-//   suggestedUsers,
-// } from "../../data/suggestions";
-
-// const RightPanel = () => {
-//   const project = trendingProject.project;
-
-//   return (
-//     <div className={styles.panel}>
-//       <div className={styles.card}>
-//         <h3 className={styles.heading}>Trending Topics</h3>
-
-//         {/* Open Source */}
-//         <p className={styles.sectionTitle}>• Open Source Projects</p>
-
-//         <div className={styles.projectBox}>
-//           <h4 className={styles.projectName}>{project.name}</h4>
-
-//           <div className={styles.tags}>
-//             {project.tags.map((tag, i) => (
-//               <span key={i}>{tag}</span>
-//             ))}
-//           </div>
-
-//           <p className={styles.projectDesc}>{project.description}</p>
-
-//           <div className={styles.meta}>
-//             <p>👤 Owner : {project.owner}</p>
-//             <p>🎓 Mentor : {project.mentor}</p>
-//             <p className={styles.rating}>
-//               Rating:
-//               <span className={styles.stars}>⭐⭐⭐⭐☆</span>
-//               (500+)
-//             </p>
-//           </div>
-
-//           <div className={styles.projectFooter}>
-//             <button className={styles.moreBtn}>More</button>
-//             <button className={styles.applyBtn}>Apply</button>
-//           </div>
-//         </div>
-
-//         {/* Suggested Connections */}
-//         <p className={styles.sectionTitle}>• Suggested Connections</p>
-
-//         {suggestedUsers.map((user) => (
-//           <div key={user.id} className={styles.userCard}>
-//             <img src={user.avatar} alt={user.name} />
-
-//             <div className={styles.userInfo}>
-//               <h4>{user.name}</h4>
-//               <p className={styles.role}>{user.role}</p>
-
-//               {user.university && (
-//                 <p className={styles.university}>
-//                   {user.university}
-//                 </p>
-//               )}
-
-//               {user.mutual && (
-//                 <p className={styles.mutual}>
-//                   {user.mutual}+ mutual connections
-//                 </p>
-//               )}
-
-//               {user.bestMatch && (
-//                 <div className={styles.matchRow}>
-//                   <span className={styles.best}>⭐ Best Match</span>
-//                   <span className={styles.percent}>
-//                     {user.bestMatch}%
-//                   </span>
-//                 </div>
-//               )}
-//             </div>
-
-//             <button className={styles.connectBtn}>
-//               {user.bestMatch ? "Request Referral" : "Connect"}
-//             </button>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default RightPanel;
-import styles from "./RightPanel.module.css";
 import {
   trendingProject,
   suggestedUsers,
 } from "../../data/suggestions";
 
+import WidgetsIcon from '@mui/icons-material/Widgets';
+import CheckIcon from '@mui/icons-material/Check';
+import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
+import InsertLinkIcon from '@mui/icons-material/InsertLink';
+import EnergySavingsLeafRoundedIcon from '@mui/icons-material/EnergySavingsLeafRounded';
+
+
 const RightPanel = () => {
   const project = trendingProject.project;
 
   return (
-    <div className={styles.panel}>
-      <div className={styles.card}>
-        <h3 className={styles.heading}>Trending Topics</h3>
+    <div className=" w-full   ">
+      <div className="bg-white px-5 box-border rounded-xl py-5  shadow-[0_2px_14px_rgba(0,0,0,0.05)]">
+        
+        {/* Heading */}
+        <h3 className="text-center text-3xl font-semibold text-gray-700  py-2 ">
+          Trending Topics
+        </h3>
+        <hr  className="border text-gray-200 mb-5"/>
 
-        {/* Open Source Section */}
-        <div className={styles.section}>
-          <p className={styles.sectionTitle}>• Open Source Projects</p>
-
-          <div className={styles.projectBox}>
-            <div className={styles.projectHeader}>
-              <img
+        {/* ================= Open Source Section ================= */}
+        <div className="mb-5">
+          <p className="text-2xl text-gray-500 mb-5">
+            • Open Source Projects
+          </p>
+      
+    
+          <div className="border-2 border-gray-200 rounded-xl px-6 py-2  flex flex-col ">
+            
+            {/* Header */}
+            <div className="flex items-center  gap-2 mb-3">
+              {/* <img
                 src={project.logo}
                 alt="logo"
-                className={styles.projectLogo}
-              />
-              <h4>{project.name}</h4>
+                className="w-7 h-7"
+              /> */}
+              <EnergySavingsLeafRoundedIcon fontSize="large" className="text-[#c623c6]"/>
+              <h4 className="text-2xl text-gray-700  font-medium">
+                {project.name}
+              </h4>
             </div>
 
-            <div className={styles.tags}>
+            {/* Tags */}
+            <div className="flex flex-wrap gap-2 mb-3">
               {project.tags.map((tag, i) => (
-                <span key={i}>{tag}</span>
+                <span
+                  key={i}
+                  className="bg-[#e8efff] px-3 py-1 rounded-md text-xs text-gray-500"
+                >
+                  {tag}
+                </span>
               ))}
             </div>
 
-            <p className={styles.projectDesc}>
+            {/* Description */}
+            <p className="text-[14px] text-gray-500 mb-3 leading-[1.4]">
               {project.description}
             </p>
+            <hr  className="border text-gray-300 mb-2"/>
 
-            <div className={styles.meta}>
+            {/* Meta Info */}
+            <div className="text-[14px] text-gray-700  ">
               <p>👤 Owner : {project.owner}</p>
               <p>🎓 Mentor : {project.mentor}</p>
-              <p className={styles.rating}>
+              <hr  className="border text-gray-300 mb-2 mt-2"/>
+
+              <p className="flex items-center gap-2">
                 Rating:
-                <span className={styles.stars}>
+                <span className="text-yellow-500 text-[15px]">
                   {"★".repeat(project.rating)}
                   {"☆".repeat(5 - project.rating)}
                 </span>
@@ -230,84 +79,150 @@ const RightPanel = () => {
               </p>
             </div>
 
-            <div className={styles.projectFooter}>
-              <button className={styles.moreBtn}>More</button>
-              <button className={styles.applyBtn}>Apply</button>
+            {/* Buttons */}
+            <div className="flex justify-between mt-5 gap-4 mb-3">
+              <button className=" w-1/2 border border-blue-500 text-gray-700  rounded-md text-md hover:bg-gray-50 transition">
+             < WidgetsIcon className="text-blue-500 mr-2 "/>
+                More
+              </button>
+
+              <button className="w-1/2 bg-[#2f5fe3] text-white  rounded-md text-md font-medium hover:bg-[#244ed4] transition">
+              <CheckIcon/>
+                Apply
+              </button>
             </div>
+          
+     
           </div>
         </div>
 
-        {/* Suggested Connections */}
-        <div className={styles.section}>
-          <p className={styles.sectionTitle}>• Suggested Connections</p>
+        {/* ================= Suggested Connections ================= */}
+        <div>
+          <p className="text-2xl text-gray-500 mb-5">
+            • Suggested Connections
+          </p>
 
           {suggestedUsers.map((user) => (
-            <div key={user.id} className={styles.userCard}>
-              <img src={user.avatar} alt={user.name} />
+            <div
+              key={user.id}
+              className="border-2 border-gray-200 rounded-xl px-4 py-3  flex flex-col mb-5">
+              
+              <div>
+                <div className="flex gap-2 items-center mb-2">
+                  
+                  {/* Avatar */}
+                  <img
+                    src={user.avatar}
+                    alt={user.name}
+                    className=" w-25 h-25 rounded-full object-cover"
+                  />
 
-              <div className={styles.userInfo}>
-                <h4>{user.name}</h4>
+                  {/* User Info */}
+                  <div className="flex flex-col  ">
+                    <h4 className="text-lg font-medium mb-2">
+                      {user.name}
+                    </h4>
 
-                {user.batch && (
-                  <p className={styles.subText}>{user.batch}</p>
-                )}
+                    {user.batch && (
+                      <p className="text-[13px] text-gray-500 mb-2">
+                        {user.batch}
+                      </p>
+                    )}
 
-                {user.company && (
-                  <p className={styles.subText}>
-                    At: {user.company}
-                  </p>
-                )}
+                    {user.company && (
+                      <p className="text-[13px] text-gray-500 mb-2">
+                        At: {user.company}
+                      </p>
+                    )}
 
-                <p className={styles.role}>{user.role}</p>
+                    <p className="text-[14px] text-gray-700">
+                      {user.role}
+                    </p>
+                    <hr className="mt-2 text-gray-300" />
+                </div>
+               </div>
+             
+             
 
-                {user.university && (
-                  <p className={styles.subText}>
-                    {user.university}
-                  </p>
-                )}
+             <div>   
+                    {user.university && (
+                       <span className="flex gap-2 items-center mb-2">
+                          <AccountBalanceIcon/>
+                          <p className="text-sm text-gray-500 leading-4">
+                            {user.university}
+                          </p>
+                      </span>
+                    )}
+                 
 
-                {user.mutualConnections && (
-                  <p className={styles.subText}>
-                    {user.mutualConnections}+ mutual connections
-                  </p>
-                )}
+                 <span className="flex gap-2">
+                 {user.avatar2 && (
+                     <img
+                     src={user.avatar2}
+                     alt={user.name}
+                     className=" w-6 h-6 rounded-full object-cover"
+                   />
+                    )}
+                  {user.mutualConnections && (
+                        <p className="text-sm text-gray-500">
+                          {user.mutualConnections}+ mutual connections
+                        </p>
+                      )}
+                 </span>
+                
 
-                {user.bestMatch && (
-                  <div className={styles.matchRow}>
-                    <span className={styles.best}>
-                      ⭐ Best Match
-                    </span>
-                    <span className={styles.percent}>
-                      {user.bestMatch}%
-                    </span>
-                  </div>
-                )}
+                  {user.bestMatch && (
+                    
+                    <div className="flex items-center  mt-2 border-t border-gray-300 ... border-b py-1">
+                      
+                      <span className="text-sm w-1/2 text-green-700 font-medium ">
+                        ⭐ Best Match
+                      </span>
+                      <span className="bg-green-700 w-1/3 text-center text-white text-md px-3  rounded-full">
+                        {user.bestMatch}%
+                      </span>
+                    </div>
+                  )}
 
-                {user.department && (
-                  <p className={styles.subText}>
-                    Department : {user.department}
-                  </p>
-                )}
+                  {user.university2 && (
+                       <span className="flex gap-2 border-gray-300 ... border-b py-1">
+                      <p className="text-sm text-gray-500">
+                        {user.university2}
+                      </p>
+                      </span>
+                    )}
 
-                {user.skillsMatch && (
-                  <p className={styles.subText}>
-                    Skills Match: {user.skillsMatch}%
-                  </p>
-                )}
+                  {user.department && (
+                    <p className="text-sm text-gray-600 py-1  border-gray-300 ... border-b">
+                      Department : <span className="text-gray-400">{user.department}</span>
+                    </p>
+                  )}
+
+                  {user.skillsMatch && (
+                    <p className="text-sm text-gray-600 py-1  border-gray-300 ... border-b">
+                      Skills Match: <span className="text-gray-400">{user.skillsMatch}%</span>
+                    </p>
+                  )}
+                </div>
               </div>
 
-              <div className={styles.buttonWrapper}>
+              {/* Buttons */}
+              <div className="flex justify-end gap-3 mt-4">
                 {user.bestMatch ? (
-                  <button className={styles.fullBtn}>
+                  <button className="w-full bg-[#2f5fe3] text-white  rounded-md text-md font-medium hover:bg-[#244ed4] transition">
                     Request Referral
                   </button>
                 ) : (
                   <>
-                    <button className={styles.moreBtnSmall}>
+                    <button className="border w-1/2 border-blue-500 text-blue-700 flex items-center justify-center  rounded-md text-sm font-medium hover:bg-gray-50 transition">
+                    < WidgetsIcon className="text-blue-500 mr-1 " fontSize="small"/>
                       More
                     </button>
-                    <button className={styles.connectBtn}>
-                      Connect
+
+                    <button className="bg-[#2f5fe3] w-1/2 text-white   rounded-md text-sm flex items-center justify-center hover:bg-[#244ed4] transition">
+                      
+                    <InsertLinkIcon className="mr-1" fontSize="small"/>
+                    Connect
                     </button>
                   </>
                 )}
@@ -315,6 +230,7 @@ const RightPanel = () => {
             </div>
           ))}
         </div>
+
       </div>
     </div>
   );

@@ -2,6 +2,8 @@ import styles from "./Home.module.css";
 import Banner from "../components/homepage/banner";
 import Sidebar from "../components/homepage/sidebar";
 import RightPanel from "../components/homepage/RightPanel";
+import PostCard from "../components/homepage/PostCard"
+import { posts } from "../data/posts";
 
 const Home = () => {
   return (
@@ -18,7 +20,18 @@ const Home = () => {
 
   {/* Feed */}
   <div className={styles.center}>
-    {/* Posts here */}
+   {posts.map((post) => (
+    <PostCard key={post.id} post={post} />
+    
+  ))}
+   {posts.map((post) => (
+    <PostCard key={post.id} post={post} />
+    
+  ))}
+     {posts.map((post) => (
+    <PostCard key={post.id} post={post} />
+    
+  ))}
   </div>
 
   {/* Right Panel */}
