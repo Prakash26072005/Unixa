@@ -1,6 +1,6 @@
 import styles from "./Home.module.css";
 import Banner from "../components/homepage/banner";
-import Sidebar from "../components/homepage/sidebar";
+import Sidebar from "../components/homepage/Sidebar";
 import RightPanel from "../components/homepage/RightPanel";
 import PostCard from "../components/homepage/PostCard"
 import { posts } from "../data/posts";

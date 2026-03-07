@@ -1,19 +1,18 @@
 import styles from "./Sidebar.module.css";
 import { profileData } from "../../data/profile.js";
 
-const Sidebar = () => {
+const Sidebar = ({ onClose }) => {
   const { profile, skills, projects } = profileData;
 
   return (
     <div className={styles.sidebar}>
-      
-      {/* Cover */}
+    
       <div
         className={styles.cover}
         style={{ backgroundImage: `url(${profile.coverImage})` }}
       ></div>
 
-      {/* Profile Info */}
+   
       <div className={styles.profileSection}>
         <img
           src={profile.avatar}
@@ -38,7 +37,7 @@ const Sidebar = () => {
         </div>
       </div>
 
-      {/* Skills */}
+      
       <div className={styles.skillsSection}>
         <h5>Skills</h5>
         <div className={styles.skills}>
@@ -48,7 +47,7 @@ const Sidebar = () => {
         </div>
       </div>
 
-      {/* Portfolio */}
+     
       <div className={styles.portfolioSection}>
         <h5>Your Portfolio</h5>
 
