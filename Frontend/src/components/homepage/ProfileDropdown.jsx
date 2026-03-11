@@ -1,57 +1,86 @@
-import styles from "./ProfileDropdown.module.css";
 import { profileData } from "../../data/profile";
 
 const ProfileDropdown = () => {
   const { profile } = profileData;
 
   return (
-    <div className={styles.dropdown}>
-      <div className={styles.profileTop}>
+    <div className="w-[300px] bg-white rounded-xl shadow-xl p-4 animate-[fadeIn_0.2s_ease]">
+
+      {/* Profile Top */}
+      <div className="flex gap-3 items-center">
         <img
           src={profile.avatar}
           alt=""
-          className={styles.avatar}
+          className="w-12 h-12 rounded-full object-cover"
         />
+
         <div>
-          <h4>{profile.name}</h4>
-          <p>{profile.role}</p>
+          <h4 className="text-[15px] font-semibold">{profile.name}</h4>
+          <p className="text-[13px] text-gray-500">{profile.role}</p>
         </div>
       </div>
 
-      <div className={styles.buttons}>
-        <button className={styles.outlineBtn}>
+      {/* Buttons */}
+      <div className="flex gap-2.5 mt-3.5">
+
+        <button className="flex-1 py-1.5 rounded-full border border-blue-600 text-blue-600 font-medium hover:bg-blue-100 transition">
           View profile
         </button>
-        <button className={styles.primaryBtn}>
+
+        <button className="flex-1 py-1.5 rounded-full bg-blue-600 text-white font-medium hover:bg-blue-800 transition">
           Verify now
         </button>
+
       </div>
 
-      <div className={styles.divider}></div>
+      {/* Divider */}
+      <div className="h-[1px] bg-gray-200 my-4"></div>
 
-      <div className={styles.section}>
-        <h5>Account</h5>
-        <span className={styles.premium}>
+      {/* Account Section */}
+      <div className="flex flex-col gap-2.5">
+        <h5 className="text-sm font-semibold">Account</h5>
+
+        <span className="text-amber-700 font-medium cursor-pointer">
           🟨 Try 1 month of Premium for ₹0
         </span>
-        <span>Settings & Privacy</span>
-        <span>Help</span>
-        <span>Language</span>
+
+        <span className="text-gray-700 text-sm cursor-pointer hover:bg-gray-100 px-1 rounded">
+          Settings & Privacy
+        </span>
+
+        <span className="text-gray-700 text-sm cursor-pointer hover:bg-gray-100 px-1 rounded">
+          Help
+        </span>
+
+        <span className="text-gray-700 text-sm cursor-pointer hover:bg-gray-100 px-1 rounded">
+          Language
+        </span>
       </div>
 
-      <div className={styles.divider}></div>
+      {/* Divider */}
+      <div className="h-[1px] bg-gray-200 my-4"></div>
 
-      <div className={styles.section}>
-        <h5>Manage</h5>
-        <span>Posts & Activity</span>
-        <span>Job Posting Account</span>
+      {/* Manage Section */}
+      <div className="flex flex-col gap-2.5">
+        <h5 className="text-sm font-semibold">Manage</h5>
+
+        <span className="text-gray-700 text-sm cursor-pointer hover:bg-gray-100 px-1 rounded">
+          Posts & Activity
+        </span>
+
+        <span className="text-gray-700 text-sm cursor-pointer hover:bg-gray-100 px-1 rounded">
+          Job Posting Account
+        </span>
       </div>
 
-      <div className={styles.divider}></div>
+      {/* Divider */}
+      <div className="h-[1px] bg-gray-200 my-4"></div>
 
-      <div className={styles.signOut}>
+      {/* Sign out */}
+      <div className="text-sm text-gray-700 cursor-pointer hover:bg-gray-100 px-1 rounded">
         Sign out
       </div>
+
     </div>
   );
 };

@@ -32,20 +32,15 @@ const RightPanel = () => {
     
           <div className="border-2 border-gray-200 rounded-xl px-6 py-2  flex flex-col ">
             
-            {/* Header */}
+           
             <div className="flex items-center  gap-2 mb-3">
-              {/* <img
-                src={project.logo}
-                alt="logo"
-                className="w-7 h-7"
-              /> */}
+             
               <EnergySavingsLeafRoundedIcon fontSize="large" className="text-[#c623c6]"/>
               <h4 className="text-2xl text-gray-700  font-medium">
                 {project.name}
               </h4>
             </div>
 
-            {/* Tags */}
             <div className="flex flex-wrap gap-2 mb-3">
               {project.tags.map((tag, i) => (
                 <span
@@ -57,13 +52,12 @@ const RightPanel = () => {
               ))}
             </div>
 
-            {/* Description */}
+          
             <p className="text-[14px] text-gray-500 mb-3 leading-[1.4]">
               {project.description}
             </p>
             <hr  className="border text-gray-300 mb-2"/>
 
-            {/* Meta Info */}
             <div className="text-[14px] text-gray-700  ">
               <p>👤 Owner : {project.owner}</p>
               <p>🎓 Mentor : {project.mentor}</p>
@@ -79,14 +73,13 @@ const RightPanel = () => {
               </p>
             </div>
 
-            {/* Buttons */}
             <div className="flex justify-between mt-5 gap-4 mb-3">
-              <button className=" w-1/2 border border-blue-500 text-gray-700  rounded-md text-md hover:bg-gray-50 transition">
+              <button className=" w-1/2 border border-blue-500 cursor-pointer text-gray-700  rounded-md text-md hover:bg-gray-50 transition">
              < WidgetsIcon className="text-blue-500 mr-2 "/>
                 More
               </button>
 
-              <button className="w-1/2 bg-[#2f5fe3] text-white  rounded-md text-md font-medium hover:bg-[#244ed4] transition">
+              <button className="w-1/2 bg-[#2f5fe3] cursor-pointer text-white  rounded-md text-md font-medium hover:bg-[#244ed4] transition">
               <CheckIcon/>
                 Apply
               </button>
@@ -209,17 +202,17 @@ const RightPanel = () => {
               {/* Buttons */}
               <div className="flex justify-end gap-3 mt-4">
                 {user.bestMatch ? (
-                  <button className="w-full bg-[#2f5fe3] text-white  rounded-md text-md font-medium hover:bg-[#244ed4] transition">
+                  <button className="w-full cursor-pointer bg-[#2f5fe3] text-white  rounded-md text-md font-medium hover:bg-[#244ed4] transition">
                     Request Referral
                   </button>
                 ) : (
                   <>
-                    <button className="border w-1/2 border-blue-500 text-blue-700 flex items-center justify-center  rounded-md text-sm font-medium hover:bg-gray-50 transition">
+                    <button className="border cursor-pointer w-1/2 border-blue-500 text-blue-700 flex items-center justify-center  rounded-md text-sm font-medium hover:bg-gray-50 transition">
                     < WidgetsIcon className="text-blue-500 mr-1 " fontSize="small"/>
                       More
                     </button>
 
-                    <button className="bg-[#2f5fe3] w-1/2 text-white   rounded-md text-sm flex items-center justify-center hover:bg-[#244ed4] transition">
+                    <button className="bg-[#2f5fe3] cursor-pointer w-1/2 text-white   rounded-md text-sm flex items-center justify-center hover:bg-[#244ed4] transition">
                       
                     <InsertLinkIcon className="mr-1" fontSize="small"/>
                     Connect

@@ -2,7 +2,7 @@ import Navbar from "./components/nav/Nav.jsx";
 import Home from "./pages/Home.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Chat from "./pages/Chat.jsx";
-import Profile from "./pages/Profile.jsx";
+
 import Refralls from "./pages/Referrals.jsx";
 import Alumni from "./pages/Alumni.jsx";
 import Jobs from "./pages/Jobs.jsx";
@@ -18,7 +18,7 @@ function App() {
         <Route path="/referrals" element={<Refralls />} />
         <Route path="/alumni" element={<Alumni />} />
         <Route path="/chat" element={<Chat />} />
-        <Route path="/profile" element={<Profile />} />
+      
         <Route path="/jobs" element={<Jobs/>} />
         <Route path="/op-src-pro" element={<OpenSorcePro/>} />
         <Route path="/notifications" element={<Notifications />} />
